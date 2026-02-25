@@ -1,0 +1,23 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// Apply themes via CSS custom properties
+// ========================================
+
+:root,
+[data-theme="dark"] {
+  @include theme-props($theme-dark);
+}
+
+[data-theme="light"] {
+  @include theme-props($theme-light);
+}
+
+[data-theme="dark-green"] {
+  @include theme-props($theme-dark-green);
+}
+
+[data-theme="dark-blue"] {
+  @include theme-props($theme-dark-blue);
+}

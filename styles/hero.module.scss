@@ -1,0 +1,313 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: $section-padding;
+  padding-top: 6rem;
+  position: relative;
+
+  // Grid texture background
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  @include mobile {
+    padding: $section-padding-mobile;
+    padding-top: 5rem;
+    min-height: auto;
+
+    &::before {
+      background-size: 36px 36px;
+      opacity: 0.25;
+    }
+  }
+}
+
+.heroInner {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+
+  @include max-width($breakpoint-lg) {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+}
+
+.heroContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.greeting {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+
+  @include mobile {
+    font-size: 2.25rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+
+  @include mobile {
+    font-size: 1.125rem;
+  }
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 2rem;
+
+  @include max-width($breakpoint-lg) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+
+  @include max-width($breakpoint-lg) {
+    justify-content: center;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.ctaPrimary {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: $border-radius-sm;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px var(--accent-dim);
+  }
+}
+
+.ctaSecondary {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: $border-radius-sm;
+  border: 1px solid var(--accent);
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+}
+
+// ========================================
+// Code Terminal
+// ========================================
+.heroVisual {
+  flex-shrink: 0;
+  width: 420px;
+
+  @include max-width($breakpoint-lg) {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.terminal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow), 0 0 0 1px var(--border);
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+}
+
+.terminalDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  &[data-color="red"] { background: #ef4444; }
+  &[data-color="yellow"] { background: #eab308; }
+  &[data-color="green"] { background: #22c55e; }
+}
+
+.terminalTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-right: 2.25rem;
+}
+
+.terminalBody {
+  padding: 1rem;
+  font-family: 'Geist Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  min-height: 280px;
+  max-height: 340px;
+  overflow-y: auto;
+
+  @include mobile {
+    font-size: 0.72rem;
+    min-height: 240px;
+    max-height: 280px;
+  }
+}
+
+.codeLine {
+  display: flex;
+  gap: 1rem;
+  white-space: pre;
+}
+
+.lineNumber {
+  color: var(--text-muted);
+  opacity: 0.4;
+  min-width: 1.5rem;
+  text-align: right;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.codeText {
+  color: var(--text-secondary);
+  min-height: 1.65em;
+}
+
+// Syntax highlighting
+.keyword {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.string {
+  color: #fbbf24;
+}
+
+.boolean {
+  color: #f472b6;
+}
+
+.comment {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.punctuation {
+  color: var(--text-muted);
+}
+
+.cursor {
+  opacity: 0;
+  color: var(--accent);
+  font-weight: 300;
+  animation: none;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+
+  @include max-width($breakpoint-lg) {
+    justify-content: center;
+  }
+}
+
+.socialLink {
+  @include button-reset;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  @include flex-center;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  transition: all $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

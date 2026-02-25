@@ -1,0 +1,196 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.section {
+  padding: $section-padding;
+  background: var(--bg-secondary);
+
+  @include mobile {
+    padding: $section-padding-mobile;
+  }
+}
+
+.sectionInner {
+  @include container;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+
+  span {
+    color: var(--accent);
+  }
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filterBtn {
+  @include button-reset;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: transparent;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+  }
+
+  &.active {
+    color: var(--bg-primary);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &.experience {
+    background: var(--skill-bar-experience);
+  }
+  &.usage {
+    background: var(--skill-bar-usage);
+  }
+  &.enjoyment {
+    background: var(--skill-bar-enjoyment);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skillCard {
+  @include card-style;
+  padding: 1.25rem;
+}
+
+.skillHeader {
+  @include flex-between;
+  margin-bottom: 1rem;
+}
+
+.skillName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skillIcon {
+  font-size: 1.25rem;
+}
+
+.skillCategory {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.barLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.barTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--skill-bar-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-out;
+  width: 0;
+
+  &.experience {
+    background: var(--skill-bar-experience);
+  }
+  &.usage {
+    background: var(--skill-bar-usage);
+  }
+  &.enjoyment {
+    background: var(--skill-bar-enjoyment);
+  }
+}
+
+.barValue {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.animated {
+  .barFill {
+    width: var(--fill-width);
+  }
+}

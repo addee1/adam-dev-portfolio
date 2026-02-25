@@ -1,0 +1,140 @@
+// ========================================
+// Theme Variables
+// ========================================
+
+// Dark theme (default)
+$theme-dark: (
+  bg-primary: #0f1117,
+  bg-secondary: #1a1d27,
+  bg-tertiary: #232735,
+  bg-card: #1a1d27,
+  bg-card-hover: #232735,
+  bg-modal: #1a1d27,
+  bg-overlay: rgba(0, 0, 0, 0.7),
+  text-primary: #e8e8ed,
+  text-secondary: #9ca3af,
+  text-muted: #6b7280,
+  accent: #64ffda,
+  accent-hover: #4cd9b8,
+  accent-dim: rgba(100, 255, 218, 0.1),
+  border: #2a2e3a,
+  border-hover: #3a3f4f,
+  shadow: rgba(0, 0, 0, 0.3),
+  scrollbar-track: #1a1d27,
+  scrollbar-thumb: #3a3f4f,
+  skill-bar-bg: #2a2e3a,
+  skill-bar-experience: #64ffda,
+  skill-bar-usage: #818cf8,
+  skill-bar-enjoyment: #f472b6,
+  tag-bg: rgba(100, 255, 218, 0.1),
+  tag-text: #64ffda,
+);
+
+// Light theme
+$theme-light: (
+  bg-primary: #f8f9fc,
+  bg-secondary: #ffffff,
+  bg-tertiary: #f0f1f5,
+  bg-card: #ffffff,
+  bg-card-hover: #f0f1f5,
+  bg-modal: #ffffff,
+  bg-overlay: rgba(0, 0, 0, 0.4),
+  text-primary: #1a1d27,
+  text-secondary: #4b5563,
+  text-muted: #9ca3af,
+  accent: #0d9373,
+  accent-hover: #0b7d63,
+  accent-dim: rgba(13, 147, 115, 0.1),
+  border: #e2e4ea,
+  border-hover: #c9ccd5,
+  shadow: rgba(0, 0, 0, 0.08),
+  scrollbar-track: #f0f1f5,
+  scrollbar-thumb: #c9ccd5,
+  skill-bar-bg: #e2e4ea,
+  skill-bar-experience: #0d9373,
+  skill-bar-usage: #6366f1,
+  skill-bar-enjoyment: #ec4899,
+  tag-bg: rgba(13, 147, 115, 0.1),
+  tag-text: #0d9373,
+);
+
+// Dark green theme
+$theme-dark-green: (
+  bg-primary: #0a1610,
+  bg-secondary: #12231a,
+  bg-tertiary: #1a3025,
+  bg-card: #12231a,
+  bg-card-hover: #1a3025,
+  bg-modal: #12231a,
+  bg-overlay: rgba(0, 0, 0, 0.7),
+  text-primary: #d1e8d5,
+  text-secondary: #8aac93,
+  text-muted: #5c7a64,
+  accent: #4ade80,
+  accent-hover: #3cc96e,
+  accent-dim: rgba(74, 222, 128, 0.1),
+  border: #1f3d2a,
+  border-hover: #2d5a3b,
+  shadow: rgba(0, 0, 0, 0.3),
+  scrollbar-track: #12231a,
+  scrollbar-thumb: #2d5a3b,
+  skill-bar-bg: #1f3d2a,
+  skill-bar-experience: #4ade80,
+  skill-bar-usage: #67e8f9,
+  skill-bar-enjoyment: #fbbf24,
+  tag-bg: rgba(74, 222, 128, 0.1),
+  tag-text: #4ade80,
+);
+
+// Dark blue theme
+$theme-dark-blue: (
+  bg-primary: #0a0f1e,
+  bg-secondary: #111832,
+  bg-tertiary: #1a2342,
+  bg-card: #111832,
+  bg-card-hover: #1a2342,
+  bg-modal: #111832,
+  bg-overlay: rgba(0, 0, 0, 0.7),
+  text-primary: #d1d9f0,
+  text-secondary: #8b9cc7,
+  text-muted: #5a6a96,
+  accent: #60a5fa,
+  accent-hover: #4d93e8,
+  accent-dim: rgba(96, 165, 250, 0.1),
+  border: #1e2d55,
+  border-hover: #2d4070,
+  shadow: rgba(0, 0, 0, 0.3),
+  scrollbar-track: #111832,
+  scrollbar-thumb: #2d4070,
+  skill-bar-bg: #1e2d55,
+  skill-bar-experience: #60a5fa,
+  skill-bar-usage: #c084fc,
+  skill-bar-enjoyment: #fb923c,
+  tag-bg: rgba(96, 165, 250, 0.1),
+  tag-text: #60a5fa,
+);
+
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Spacing
+$section-padding: 5rem 2rem;
+$section-padding-mobile: 3rem 1rem;
+$container-max-width: 1200px;
+$border-radius: 12px;
+$border-radius-sm: 8px;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+$z-header: 100;
+$z-modal: 200;
+$z-overlay: 190;
+$z-easter-egg: 300;
+$z-tooltip: 400;

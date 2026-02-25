@@ -1,0 +1,5 @@
+fix so full image is shown in projectmodal.
+MovieDB proj, add right info
+
+fix app/layout.tsx
+app/layout.tsx fixa icons
