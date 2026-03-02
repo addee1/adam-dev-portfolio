@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTheme, type ThemeName } from './ThemeContext';
 import styles from '@/styles/header.module.scss';
+import Image from "next/image";
 
 const themes: { name: ThemeName; label: string; color: string }[] = [
   { name: 'dark', label: 'Dark', color: '#1a1d27' },
@@ -41,9 +42,12 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.logo}>
-          {'<'}
-          <span>Dev</span>
-          {' />'}
+          <Image
+              src="/images/ao-logo-white.png"
+              alt="logo"
+              width={50}
+              height={50}
+          />
         </div>
 
         <nav className={styles.nav} aria-label="Main navigation">
@@ -52,8 +56,7 @@ export default function Header() {
               key={item}
               className={styles.navLink}
               onClick={() => scrollTo(item)}
-              type="button"
-            >
+              type="button">
               {item}
             </button>
           ))}
