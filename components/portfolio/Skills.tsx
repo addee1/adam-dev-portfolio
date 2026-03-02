@@ -15,11 +15,14 @@ const categories: { value: Category; label: string }[] = [
 ];
 
 function SkillCard({ skill, animated }: { skill: Skill; animated: boolean }) {
+  const Icon = skill.icon;
   return (
     <div className={`${styles.skillCard} ${animated ? styles.animated : ''}`}>
       <div className={styles.skillHeader}>
         <div className={styles.skillName}>
-          <span className={styles.skillIcon}>{skill.icon}</span>
+          <span className={styles.skillIcon}>
+            <Icon size={22}/>
+          </span>
           {skill.name}
         </div>
         <span className={styles.skillCategory}>{skill.category}</span>
