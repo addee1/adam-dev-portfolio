@@ -195,9 +195,8 @@ export default function Hero() {
           <h1 className={styles.name}>Adam Ottosson</h1>
           <p className={styles.title}>Certified .NET Developer | Java Developer Student</p>
           <p className={styles.description}>
-            I build exceptional digital experiences that live at the intersection
-            of design and engineering. Passionate about clean code, scalable
-            architecture, and creating software that makes a difference.
+            I enjoy building well-structured applications — from backend APIs and databases to complete full-stack solutions.
+            My focus is clean code, clear architecture, and building software that is practical and reliable.
           </p>
           <div className={styles.heroCta}>
             <button
