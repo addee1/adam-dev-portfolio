@@ -1,6 +1,22 @@
-// ========================================
-// Portfolio Data - Modify as needed
-// ========================================
+import { IconType } from 'react-icons';
+import {
+  SiTypescript,
+  SiJavascript,
+  SiSharp,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiVuedotjs,
+  SiHtml5,
+  SiCss3,
+  SiDocker,
+  SiGit,
+  SiFigma,
+  SiPostgresql,
+  SiMongodb, SiD, SiDotnet,
+} from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 export interface Project {
   id: string;
@@ -19,7 +35,7 @@ export interface Project {
 export interface Skill {
   name: string;
   category: 'language' | 'framework' | 'tool' | 'database' | 'other';
-  icon: string;
+  icon: IconType;
   experience: number;
   usage: number;
   enjoyment: number;
@@ -58,8 +74,7 @@ export const projects: Project[] = [
       'Swagger',
       'Bootstrap'
     ],
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com',
+    repoUrl: 'https://github.com/addee1/WebApp_Silicon',
   },
   {
     id: '2',
@@ -82,9 +97,7 @@ export const projects: Project[] = [
     languages: ['JavaScript', 'SCSS'],
     frameworks: ['React'],
     tools: ['React Router'],
-
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com',
+    repoUrl: 'https://github.com/addee1/react-crito',
   },
   {
     id: '3',
@@ -116,8 +129,7 @@ export const projects: Project[] = [
       'Axios',
       'Steam Web API'
     ],
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com',
+    repoUrl: 'https://github.com/addee1/cs2inv',
   },
   {
     id: '4',
@@ -161,7 +173,7 @@ export const projects: Project[] = [
       'Steam Web API',
       'Git'
     ],
-    repoUrl: 'https://github.com',
+    repoUrl: 'https://github.com/addee1/cs-portfolio',
   },
   {
     id: '5',
@@ -213,8 +225,7 @@ export const projects: Project[] = [
       'Keycloak',
       'Sensors',
     ],
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com',
+    repoUrl: 'https://github.com/orgs/plantpal-team/repositories',
   },
   {
     id: '6',
@@ -254,7 +265,6 @@ export const projects: Project[] = [
       'Linux',
       'EmulationStation',
     ],
-    liveUrl: 'https://example.com',
   },
   {
     id: '7',
@@ -282,7 +292,6 @@ export const projects: Project[] = [
       'Two-way Mirror Glass',
       'Touchscreen Display',
     ],
-    liveUrl: 'https://example.com',
   },
   {
     id: '8',
@@ -299,17 +308,19 @@ export const projects: Project[] = [
     languages: ['HTML', 'CSS'],
     frameworks: [],
     tools: ['Figma (concept)'],
-    liveUrl: 'https://example.com',
+    repoUrl: "https://github.com/addee1/MemeToken",
   },
   {
     id: '9',
-    title: 'Movie App - Java Hibernate',
+    title: 'MovieDB Desktop App – Java, JPA & JavaFX',
     description:
-        'A visually engaging landing page concept for a crypto meme token.',
+        'A JavaFX desktop application that integrates with the TMDB API and persists movie data locally using JPA/Hibernate and MySQL (Docker).',
     longDescription:
-        'A simple landing page created to practice and showcase frontend design skills. ' +
-        'Built using plain HTML and CSS, focusing on layout, typography, color choices, and overall visual structure. ' +
-        'The goal was to create a clean and visually appealing front page without using any frameworks or advanced tooling.',
+        'A desktop application built with JavaFX that integrates with the TMDB REST API to fetch movie data and store it in a relational database using JPA and Hibernate. ' +
+        'On first startup, the application automatically imports top-rated and now-playing movies if the database is empty. ' +
+        'All subsequent searches and filtering operations are performed against the local database. ' +
+        'The project demonstrates REST API integration, DTO mapping, entity relationships, transaction handling, and repository-based data access. ' +
+        'The database runs in Docker using MySQL, and the application includes unit tests written with JUnit and Mockito.',
     images: [
       "/images/movieapp/1.png",
       "/images/movieapp/1.1.png",
@@ -319,12 +330,32 @@ export const projects: Project[] = [
       "/images/movieapp/5.png",
       "/images/movieapp/6.png",
       "/images/movieapp/7.png",
-      "/images/movieapp/8.png",],
-    tags: ['Frontend', 'UI Design', 'Landing Page', 'Concept Project'],
-    languages: ['HTML', 'CSS'],
-    frameworks: [],
-    tools: ['Figma (concept)'],
-    liveUrl: 'https://example.com',
+      "/images/movieapp/8.png",
+    ],
+    tags: [
+      'Backend',
+      'Desktop Application',
+      'REST API Integration',
+      'Database',
+      'ORM',
+    ],
+    languages: ['Java', 'SQL'],
+    frameworks: [
+      'JavaFX',
+      'Hibernate',
+      'Jakarta Persistence (JPA)',
+      'JUnit',
+      'Mockito'
+    ],
+    tools: [
+      'Maven',
+      'Docker',
+      'MySQL',
+      'TMDB API',
+      'Git'
+    ],
+    liveUrl: '',
+    repoUrl: 'https://github.com/ithsjava25/project-jpa-project-jpa-grupp-2-d',
   },
   {
     id: '10',
@@ -372,28 +403,30 @@ export const projects: Project[] = [
 
 export const skills: Skill[] = [
   // Languages
-  { name: 'TypeScript', category: 'language', icon: 'TS', experience: 20, usage: 20, enjoyment: 70 },
-  { name: 'JavaScript', category: 'language', icon: 'JS', experience: 35, usage: 50, enjoyment: 70 },
-  { name: 'Java', category: 'language', icon: 'JA', experience: 50, usage: 50, enjoyment: 80 },
-  { name: 'C#', category: 'language', icon: 'C#', experience: 65, usage: 45, enjoyment: 80 },
-
+  { name: 'C#', category: 'language', icon: SiSharp, experience: 60, usage: 50, enjoyment: 80 },
+  { name: 'Java', category: 'language', icon: FaJava, experience: 50, usage: 50, enjoyment: 80 },
+  { name: 'JavaScript', category: 'language', icon: SiJavascript, experience: 25, usage: 50, enjoyment: 70 },
+  { name: 'TypeScript', category: 'language', icon: SiTypescript, experience: 15, usage: 15, enjoyment: 70 },
+  { name: 'HTML', category: 'language', icon: SiHtml5, experience: 90, usage: 90, enjoyment: 50 },
+  { name: 'CSS / SCSS', category: 'language', icon: SiCss3, experience: 90, usage: 90, enjoyment: 50 },
+    
   // Frameworks
-  { name: 'React', category: 'framework', icon: 'Re', experience: 35, usage: 60, enjoyment: 90 },
-  { name: 'Next.js', category: 'framework', icon: 'Nx', experience: 25, usage: 25, enjoyment: 80 },
-  { name: 'Node.js', category: 'framework', icon: 'No', experience: 15, usage: 15, enjoyment: 50 },
-  { name: 'Express', category: 'framework', icon: 'Ex', experience: 15, usage: 15, enjoyment: 20 },
-  { name: 'Vue.js', category: 'framework', icon: 'Vu', experience: 20, usage: 20, enjoyment: 60 },
-  { name: 'FastAPI', category: 'framework', icon: 'FA', experience: 60, usage: 35, enjoyment: 82 },
+  { name: 'ASP.NET', category: 'framework', icon: SiDotnet, experience: 50, usage: 50, enjoyment: 70 },
+  { name: 'React', category: 'framework', icon: SiReact, experience: 35, usage: 60, enjoyment: 90 },
+  { name: 'Next.js', category: 'framework', icon: SiNextdotjs, experience: 15, usage: 15, enjoyment: 60 },
+  { name: 'JavaFX', category: 'framework', icon: FaJava,experience: 20, usage: 20, enjoyment: 80 },
+  { name: 'Node.js', category: 'framework', icon: SiNodedotjs, experience: 15, usage: 15, enjoyment: 50 },
+  { name: 'Express', category: 'framework', icon: SiExpress, experience: 15, usage: 15, enjoyment: 20 },
+  { name: 'Vue.js', category: 'framework', icon: SiVuedotjs, experience: 20, usage: 20, enjoyment: 60 },
 
   // Tools
-  { name: 'Docker', category: 'tool', icon: 'Do', experience: 78, usage: 70, enjoyment: 75 },
-  { name: 'Git', category: 'tool', icon: 'Gi', experience: 95, usage: 98, enjoyment: 85 },
-  { name: 'Figma', category: 'tool', icon: 'Fi', experience: 60, usage: 45, enjoyment: 80 },
-  { name: 'VS Code', category: 'tool', icon: 'VS', experience: 95, usage: 98, enjoyment: 95 },
+  { name: 'Docker', category: 'tool', icon: SiDocker, experience: 15, usage: 15, enjoyment: 60 },
+  { name: 'Git', category: 'tool', icon: SiGit, experience: 80, usage: 80, enjoyment: 50 },
+  { name: 'Figma', category: 'tool', icon: SiFigma, experience: 40, usage: 40, enjoyment: 80 },
 
   // Databases
-  { name: 'PostgreSQL', category: 'database', icon: 'PG', experience: 80, usage: 70, enjoyment: 78 },
-  { name: 'MongoDB', category: 'database', icon: 'MG', experience: 70, usage: 45, enjoyment: 65 },
+  { name: 'PostgreSQL', category: 'database', icon: SiPostgresql, experience: 50, usage: 50, enjoyment: 70 },
+  { name: 'MongoDB', category: 'database', icon: SiMongodb, experience: 10, usage: 10, enjoyment: 50 },
 ];
 
 export const socialLinks = [
