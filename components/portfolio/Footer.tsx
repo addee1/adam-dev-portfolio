@@ -47,14 +47,13 @@ export default function Footer() {
               className={styles.socialLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={link.name}
-            >
+              aria-label={link.name}>
               <SocialIcon icon={link.icon} />
             </a>
           ))}
         </div>
         <p className={styles.copyright}>
-          {new Date().getFullYear()} Adam Ottosson. All rights reserved.
+          © {new Date().getFullYear()}  Adam Ottosson | All rights reserved.
         </p>
         <p className={styles.builtWith}>
           Built with <span> ♥</span>

@@ -194,3 +194,11 @@
     width: var(--fill-width);
   }
 }
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 22px;
+  opacity: 0.9;
+}
